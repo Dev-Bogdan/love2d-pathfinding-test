@@ -1,9 +1,0 @@
-{
-  "runtime.version": "LuaJIT",
-  "workspace.library": [
-    "/usr/bin/love"
-  ],
-  "diagnostics.globals": [
-    "love"
-  ]
-}
