@@ -26,8 +26,8 @@ function love.update(dt)
 
     local distance = getDistance(circle.x, circle.y, mouse_x, mouse_y)
 
-    -- enemy only moves if player actor is within 400 pixels
-    if distance < 400 then
+    -- enemy only moves if player actor is within 200 pixels
+    if distance < 200 then
         circle.x = circle.x + circle.speed * cos * (distance/100) * dt
         circle.y = circle.y + circle.speed * sin * (distance/100) * dt
     end
