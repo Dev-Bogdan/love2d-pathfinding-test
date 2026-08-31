@@ -34,11 +34,45 @@ function love.update(dt)
 end
 
 function love.draw()
+    local distance = getDistance(circle.x, circle.y, mouse_x, mouse_y)
+
+    local detectionRange = 200
+    local t = 1 - math.min(distance / detectionRange, 1)
+
+    local r = t
+    local g = 1 - t
+    local b = 0
+
+    love.graphics.setColor(r, g, b)
     love.graphics.circle("line", circle.x, circle.y, circle.radius)
+
+    love.graphics.setColor(1, 1, 1)
     love.graphics.line(circle.x, circle.y, mouse_x, mouse_y)
     love.graphics.line(circle.x, circle.y, mouse_x, circle.y)
     love.graphics.line(mouse_x, mouse_y, mouse_x, circle.y)
 
-    local distance = getDistance(circle.x, circle.y, mouse_x, mouse_y)
+    love.graphics.setColor(r, g, b, 0.5)
     love.graphics.circle("line", circle.x, circle.y, distance)
+
+    love.graphics.setColor(1, 1, 1)
+    love.graphics.print("Distance: " .. math.floor(distance), 10, 10)
+
+    local statusText = (distance < detectionRange) and "CHASING" or "IDLE"
+    local font = love.graphics.getFont()
+    local scale = 3 
+
+    local textWidth = font:getWidth(statusText) * scale
+    local textHeight = font:getHeight() * scale
+
+    local screenW = love.graphics.getWidth()
+    local screenH = love.graphics.getHeight()
+
+    love.graphics.setColor(r, g, b)
+    love.graphics.print(
+        statusText,
+        screenW / 2 - textWidth / 2,
+        screenH / 2 - textHeight / 2,
+        0,     
+        scale, scale 
+    )
 end
