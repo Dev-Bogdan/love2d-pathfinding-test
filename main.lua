@@ -9,7 +9,7 @@ function love.load()
     player.x = 600
     player.y = 400
     player.radius = 10
-    player.speed = 250
+    player.speed = 400
 
     obstacle = { x = 350, y = 250, width = 100, height = 100 }
 
