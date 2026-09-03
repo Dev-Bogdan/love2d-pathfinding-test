@@ -176,7 +176,7 @@ function love.update(dt)
     elseif state == "SEARCHING" then
         local d = getDistance(circle.x, circle.y, lastKnownX, lastKnownY)
 
-        if d < 5 then
+        if d < 15 then
             arrivedAtLastKnown = true
         else
             local angle = math.atan2(lastKnownY - circle.y, lastKnownX - circle.x)
