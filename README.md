@@ -1,6 +1,6 @@
 # Enemy Detection Demo
 
-A small LÖVE2D (Love2D) demo showcasing a stealth enemy AI: field-of-view detection, line-of-sight blocking via an obstacle, and a simple state machine (idle → chasing → searching).
+A small LÖVE2D (Love2D) demo showcasing stealth & basic enemy detection/navigation: field-of-view detection, line-of-sight blocking via an obstacle, and a simple state machine (idle → chasing → searching).
 
 **[▶ Play in browser](https://dev-bogdan.itch.io/enemy-detection-demo)**
 
@@ -16,16 +16,6 @@ A small LÖVE2D (Love2D) demo showcasing a stealth enemy AI: field-of-view detec
 ## Controls
 
 - **Arrow keys** — move the player
-
-## Running locally
-
-Requires [LÖVE2D](https://love2d.org/) installed.
-
-```bash
-git clone https://github.com/Dev-Bogdan/love2d-pathfinding-test.git
-cd love2d-pathfinding-test
-love .
-```
 
 ## Tech
 
