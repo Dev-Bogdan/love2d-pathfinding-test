@@ -1,3 +1,4 @@
+--1
 function love.load()
     circle = {}
     circle.x = 100
