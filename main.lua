@@ -87,7 +87,7 @@ function resolveCircleRectCollision(circ, rect)
             local overlap = circ.radius - dist
             circ.x = circ.x + (dx / dist) * overlap
             circ.y = circ.y + (dy / dist) * overlap
-        else
+          else
             circ.y = circ.y - circ.radius
         end
     end
